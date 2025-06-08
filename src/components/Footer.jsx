@@ -97,14 +97,20 @@ const Footer = ({ hrServices = [], virtualHrServices = [], accountingServices = 
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-orange-400 flex-shrink-0" />
-                <a href="tel:8125502679" className="text-gray-300 text-sm hover:text-white">
-                  +971 56 226 0803 || +971 56 747 9769
+                <a href="tel:+971567479769" className="text-gray-300 text-sm hover:text-white">
+                 +971 56 747 9769
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-orange-400 flex-shrink-0" />
+                <a href="tel:+971562260803" className="text-gray-300 text-sm hover:text-white">
+                 +971 56 226 0803
 
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-orange-400 flex-shrink-0" />
-                <a href="mailto:Ravikumar@Sharanyainfo.com" className="text-gray-300 text-sm hover:text-white">
+                <a href="info@bsquareglobalfze.com" className="text-gray-300 text-sm hover:text-white">
                   info@bsquareglobalfze.com
                 </a>
               </div>
