@@ -1,0 +1,166 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --background: 210 20% 98%; /* Light Cool Gray */
+  --foreground: 220 13% 20%; /* Dark Cool Gray */
+  
+  --card: 0 0% 100%; /* White */
+  --card-foreground: 220 13% 20%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 13% 20%;
+
+  --primary: 217 91% 60%; /* Vibrant Blue */
+  --primary-foreground: 0 0% 100%; /* White */
+
+  --secondary: 45 100% 51%; /* Vibrant Yellow */
+  --secondary-foreground: 220 13% 13%; /* Darker Gray for contrast on Yellow */
+  
+  --accent: 45 95% 55%; /* Slightly darker/richer Yellow for accents */
+  --accent-foreground: 220 13% 13%;
+
+  --muted: 210 30% 90%; /* Lighter Cool Gray */
+  --muted-foreground: 210 10% 45%; /* Medium Cool Gray */
+
+  --destructive: 0 72% 51%; /* Red */
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 210 20% 88%; /* Cool Gray Border */
+  --input: 210 20% 88%;
+  --ring: 217 91% 70%; /* Lighter Blue for ring */
+
+  --radius: 0.75rem; /* Slightly larger radius for a modern feel */
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(220, 85%, 55%) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: hsla(var(--primary) / 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsla(var(--primary) / 0.2);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px -12px hsla(var(--primary) / 0.25);
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px hsla(var(--foreground) / 0.2);
+}
+.text-shadow-strong {
+  text-shadow: 2px 2px 5px hsla(var(--foreground) / 0.3);
+}
+
+
+.hero-pattern {
+  background-image: 
+    radial-gradient(circle at 15% 85%, hsla(var(--secondary) / 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, hsla(var(--primary) / 0.08) 0%, transparent 40%);
+}
+
+.service-card {
+  background: linear-gradient(150deg, hsl(var(--card)) , hsla(var(--muted) / 0.5));
+  backdrop-filter: blur(15px);
+  border: 1px solid hsl(var(--border));
+}
+
+.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: hsl(var(--primary) / 0.9);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 15px hsla(var(--primary) / 0.2);
+}
+
+.btn-secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: hsl(var(--secondary) / 0.9);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 15px hsla(var(--secondary) / 0.2);
+}
+
+.section-divider {
+  background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  height: 2.5px;
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+/* Ensure buttons maintain text color on hover/focus if not overridden by variant */
+.btn-primary.text-primary-foreground:hover,
+.btn-primary.text-primary-foreground:focus {
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-secondary.text-secondary-foreground:hover,
+.btn-secondary.text-secondary-foreground:focus {
+  color: hsl(var(--secondary-foreground));
+}
+/* index.css */
+.custom-logo {
+  height: 100px;         /* base height */
+  max-height: 100px;    /* optional limit */
+  width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.custom-logo:hover {
+  transform: scale(1.05); /* slight zoom on hover */
+}
+
+/* Responsive adjustment for medium and larger screens */
+@media (min-width: 768px) {
+  .custom-logo {
+    height: 100px;
+  }
+}
